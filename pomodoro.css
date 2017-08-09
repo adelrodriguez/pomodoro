@@ -1,0 +1,42 @@
+html {
+	font-size: 16px;
+	overflow: hidden;
+}
+
+body {
+	background: #EB3349;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #F45C43, #EB3349);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #F45C43, #EB3349);  /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/ 
+}
+
+.container {
+	margin-top: 20px !important;
+}
+
+.container h1 {
+	font-size: 4rem;
+}
+
+#timer .time {
+	font-size: 6rem;
+}
+
+#timer button {
+	margin: 10px 20px 30px 20px;
+}
+
+#set-session, #set-break {
+	width: 200px;
+	margin-bottom: 30px;
+	display: inline-block;
+}
+
+#session-control {
+	font-size: 1.75rem;
+}
+
+@media (max-width: 400px) {
+	html {
+		font-size: 12px;
+	}
+}

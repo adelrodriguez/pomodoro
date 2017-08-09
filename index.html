@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- STYLES -->
+
+	<!-- Semantic UI -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="pomodoro.css">
+
+	<!-- SCRIPTS -->
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<!-- Semantic UI -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+	<script type="text/javascript" src="pomodoro.js"></script>
+
+	<title>Pomodoro Clock</title>
+</head>
+<body>
+	<div class="ui fluid center aligned raised very padded text container segment">
+		<h1>Pomodoro Clock</h1>
+		<div id="timer">
+			<div class="time"></div>
+			<div class="ui red progress">
+  				<div class="bar"></div>
+  				<div class="label">Session 1</div>
+			</div>
+			<button class="big ui labeled icon button switch play">
+				<i class="play icon"></i>
+				Play
+			</button>
+			<button class="big ui labeled icon button reset">
+				<i class="history icon"></i>
+				Reset
+			</button>
+		</div>
+		<div class="ui horizontal divider">SETTINGS</div>
+		<div id="session-control">
+			<div id="set-session">
+				<h3>Session Length</h3>
+				<button value="subtract-session" class="large ui icon button minus">
+					<i class="minus icon"></i>
+				</button>
+				<span class="time"></span>
+				<button value="add-session" class=" large ui icon button plus">
+					<i class="plus icon"></i>
+				</button>
+			</div>
+			<div id="set-break">
+				<h3>Break Length</h3>
+				<button value="subtract-break" class="large ui icon button minus">
+					<i class="minus icon"></i>
+				</button>
+				<span class="time"></span>
+				<button value="add-break" class="large ui icon button plus">
+					<i class="plus icon"></i>
+				</button>
+			</div>		
+		</div>
+	</div>
+</body>
+</html>
