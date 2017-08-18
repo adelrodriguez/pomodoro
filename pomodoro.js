@@ -2,6 +2,7 @@ $(document).ready(function() {
 	var sessionTime;
 	var breakTime;
 	var timerID;
+	var audio = new Audio('https://dl.dropboxusercontent.com/s/02y8d8zetwdz6rn/Ding%20-%20Sound%20Effects%20YouTube.wav');
 
 	var pomodoro = {
 		setTimes: function(action) {
@@ -34,7 +35,9 @@ $(document).ready(function() {
 			$("#timer .time").text(currentTime + ':00');
 
 			// update progress bar to set data total to session value
-			pomodoro.updateProgress(currentTime * 60);
+			$('.progress').progress({
+				total: currentTime * 60
+			});
 		},
 		runTimer: function() {
 		 	var displayTime = $("#timer .time").text().split(':');
@@ -63,7 +66,6 @@ $(document).ready(function() {
 		},
 		changeSession: function() {
 			// play audio when changing lesson
-			var audio = new Audio('https://dl.dropboxusercontent.com/s/02y8d8zetwdz6rn/Ding%20-%20Sound%20Effects%20YouTube.wav');
 			audio.play();
 			
 			$(".progress").progress('reset');
@@ -83,11 +85,6 @@ $(document).ready(function() {
 			pomodoro.isBreak = false;
 			pomodoro.count = 1;
 			$(".label").text("Session " + pomodoro.count);
-		},
-		updateProgress: function(total) {
-
-			$(".progress").attr("data-value", 0);
-			$(".progress").attr("data-total", total);
 		},
 		isBreak: false,
 		count: 1,
@@ -114,9 +111,7 @@ $(document).ready(function() {
 		}
 
 		$(".plus, .minus").attr("disabled", true);
-		$(".reset").attr("hidden", false);
-		$(this).toggleClass("play");
-		$(this).toggleClass("pause");
+		$(this).toggleClass("play").toggleClass("pause");
 	});
 
 	$(".plus, .minus").click(function() {
@@ -126,6 +121,5 @@ $(document).ready(function() {
 	$(".reset").click(function() {
 		pomodoro.reset();
 		$(".plus, .minus").attr("disabled", false);
-		$(this).attr("hidden", true);
 	});
 });
